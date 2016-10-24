@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Gantt Chart Example 3</title>
+</head>
+<body>
+</body>
+</html>
+<script type="text/javascript" src="vendor/d3.min.js"></script>
+<script type="text/javascript" src="vendor/rounding.js"></script>
+<script type="text/javascript" src="js/drawings.js"></script>
+<script type="text/javascript">
+  svg = d3.select(document.body).append("svg");
+  svg.style("stroke-width", 0.5);
+  svg.style("width", 800);
+  svg.style("height", 600);
+  (new Wire(svg, 10, 10, 100, 3, "h")).draw();
+  var w = new Wire(svg, 10, 10, 100, 3, "v");
+  w.draw();
+</script>
+
