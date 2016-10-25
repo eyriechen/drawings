@@ -1,5 +1,17 @@
+function roundedRect(x, y, width, height, radius) {
+  return "M" + (x + radius) + " " + y
+       + "L" + (x + width - radius) + " " + y
+       + "Q" + (x + width) + " " + y + " " + (x + width) + " " + (y + radius)
+       + "L" + (x + width) + " " + (y + height - radius)
+       + "Q" + (x + width) + " " + (y + height) + " " + (x + width - radius) + " " + (y + height)
+       + "L" + (x + radius) + " " + (y + height)
+       + "Q" + x + " " + (y + height) + " " + x + " " + (y + height - radius)
+       + "L" + x + " " + (y + radius)
+       + "Q" + x + " " + y + " " + (x + radius) + " " + y;
+};
+
 function WireRect(parent, x, y, width, height, diameter, r) {
-    this.parent = parent;
+  this.parent = parent;
 };
 
 function Wire(parent, x, y, length, diameter, direction){
@@ -25,3 +37,4 @@ Wire.prototype.draw = function() {
     w.style(key, this.styles[key]);
   }
 };
+
