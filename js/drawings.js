@@ -1,4 +1,4 @@
-function roundedRect(x, y, width, height, radius) {
+function roundedRectClockwise(x, y, width, height, radius) {
   return "M" + (x + radius) + " " + y
        + "L" + (x + width - radius) + " " + y
        + "Q" + (x + width) + " " + y + " " + (x + width) + " " + (y + radius)
@@ -8,6 +8,18 @@ function roundedRect(x, y, width, height, radius) {
        + "Q" + x + " " + (y + height) + " " + x + " " + (y + height - radius)
        + "L" + x + " " + (y + radius)
        + "Q" + x + " " + y + " " + (x + radius) + " " + y;
+};
+
+function roundedRectAnticlockwise(x, y, width, height, radius) {
+  return "M" + x + " " + (y + radius)
+       + "L" + x + " " + (y + height - radius)
+       + "Q" + x + " " + (y + height) + " " + (x + radius) + " " + (y + height)
+       + "L" + (x + width - radius) + " " + (y + height)
+       + "Q" + (x + width) + " " + (y + height) + " " + (x + width) + " " + (y + height - radius)
+       + "L" + (x + width) + " " + (y + radius) + " " + (x + width - radius) + " " + y
+       + "Q" + (x + width) + " " + y + " " + (x + width - radius) + " " + y
+       + "L" + (x + radius) + " " + y
+       + "Q" + x + " " + y + " " + x + " " + (y + radius);
 };
 
 function WireRect(parent, x, y, width, height, diameter, r) {
